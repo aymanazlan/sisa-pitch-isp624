@@ -233,7 +233,7 @@ body.started .keys { opacity: 0; }
 <div class="scrim"></div>
 <div class="grain"></div>
 <div class="bignum" id="bignum" aria-hidden="true"></div>
-<p class="keys"><kbd>←</kbd> <kbd>→</kbd> move · <kbd>N</kbd> notes · <kbd>T</kbd> timer · <kbd>F</kbd> full screen</p>
+<p class="keys"><kbd>←</kbd> <kbd>→</kbd> move · <kbd>N</kbd> notes · <kbd>T</kbd> timer · <kbd>W</kbd> 3D on/off · <kbd>F</kbd> full screen</p>
 
 <main class="deck" id="deck">
 
@@ -1509,6 +1509,7 @@ window.QA = [
     else if (k === 'n' || k === 'N') document.getElementById('notes').classList.toggle('show');
     else if (k === 'f' || k === 'F') toggleFs();
     else if (k === 't' || k === 'T') { e.shiftKey ? tReset() : tToggle(); }
+    else if (k === 'w' || k === 'W') { window.__glOff = !window.__glOff; document.getElementById('gl').style.display = window.__glOff ? 'none' : ''; }
   });
   var tx = null, ty = 0;
   document.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
@@ -1836,7 +1837,7 @@ window.QA = [
 
     function frame() {
       requestAnimationFrame(frame);
-      if (!visible) return;
+      if (!visible || window.__glOff) return;
       var t = clock.getElapsedTime(), k = reduce ? 0 : 1;
       var since = t - tStart, dur = reduce ? .01 : 1.7;
       var centered = document.body.classList.contains('center-mode');
