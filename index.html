@@ -895,57 +895,67 @@ body[data-tone="dark"] .nav { color: var(--white); }
 </nav>
 
 <script>
-// Speaker script for the ISP624 innovation pitch (10-minute limit, aim for about 9:30).
+// Speaker script for the ISP624 innovation pitch: short lines, one idea each, easy to memorise.
 // Cues: [pause] = 1 s pause, [demo] = one live demo action (counted as 10 s).
 window.LECTURER = "Ts. Dr. Nurul Husna and Sir Khairul Zharif";
 window.PITCH = [
-  { slide: 1, title: "Hook", speaker: "Syazwan", target: 32,
-    text: "Assalamualaikum and good morning, {L}. Look at this video. [pause] This rubbish was dumped beside a public walkway, and our team filmed it ourselves. **Three out of four** residents we surveyed have never reported rubbish like this. [pause] Not because they don’t care, but because they don’t know where to report, or they think nothing will happen. Today, we want to show you how one photo can change that.",
-    tip: "Start the timer (T) as you begin. Say nothing for the first two seconds; let the video play. Pause for a full second after “three out of four”." },
-  { slide: 2, title: "Who we are", speaker: "Syazwan", target: 48,
-    text: "We are **Group EcoSpark**, four students from CDCS259, Bachelor of Information Systems, Intelligent Systems Engineering, at UiTM Kedah. I am Syazwan. Our team leader, **Arief Najib**, built the prototype. **Aiman**, our system analyst, will explain the problem and our users, and **Haziq** our solution. So why are we here? SISA was our entry to the **Sime Darby Property University Hackathon 2026**, under the theme Township of Tomorrow. We took it from idea to a working prototype in **one week**, and that week taught us a lot about building fast, and about listening to users. Today we pitch it, and share what we learned. Aiman?",
-    tip: "Gesture to each member as you say their name. Stress “one week”." },
-  { slide: 3, title: "Problem", speaker: "Aiman", target: 50,
-    text: "Thank you, Syazwan. Our problem in one sentence: **rubbish keeps coming back to the same spots, and reports go nowhere.** [pause] Residents have no simple way to report public rubbish. And when they do, every report becomes a separate complaint. Look at the loop on the right. Rubbish appears. Few people report it. The reports that do come in pile up as duplicates, so nobody knows which case is urgent. Nothing happens, the resident never hears back, and next time, they don’t report at all. So the same spot stays dirty, again and again. And when residents stop reporting, management never even sees the problem.",
-    tip: "Read the problem statement slowly; it is your clarity mark. Point at each step of the loop as it lights up." },
-  { slide: 4, title: "Why it matters", speaker: "Aiman", target: 68,
-    text: "This is not a small problem. Malaysia throws away about **39,000 tonnes** of solid waste every day, and **2,634** illegal dumping sites were shut down in 2024 alone. Close to home, **65.9%** of the residents we surveyed see dumped rubbish near their home at least once a month. [pause] So why aren’t current solutions enough? Residents can call the council hotline, post in WhatsApp groups, or use SISPAA and PBTCare. But look at the table: none of them merges duplicate reports, none ranks urgency, and residents rarely see the case closed. And because every report is separate, ten residents reporting one pile look like ten problems, while a pile nobody reports looks like no problem at all. That is why satisfaction with current channels is only **2.64 out of 5**. The problem is serious, and it is not being handled well.",
-    tip: "This slide earns the significance mark. Move your hand along the red crosses, then land on 2.64." },
-  { slide: 5, title: "Our users", speaker: "Aiman", target: 64,
-    text: "So who are we designing for? Two people. First, **the resident**, our main user. They walk past the same rubbish every day. Among the 33 residents who never reported, the top reason, at **39.4%**, is simply that they don’t know where to report. Others said it is too troublesome, or that no action will be taken. They need one easy way to report, and proof that something happened. Second, **the township manager**, our decision user. They get many complaints about the same pile, and cannot tell which one is urgent. Residents also told us what would keep them reporting: recognition, progress updates and rewards. And what worries them: privacy, and fake reports. In their own words: send reports to the correct local council, and allow follow-up photos. Haziq?",
-    tip: "Speak about the resident with empathy; this is the user-understanding mark. Read the two quotes in a resident’s voice." },
-  { slide: 6, title: "Solution", speaker: "Haziq", target: 68,
-    text: "Thank you, Aiman. Our answer is SISA. It works in five steps, on the phone residents already have. One, **report**: snap one photo, and the app records the location. Two, **verify**: AI checks the waste type, how serious it is, and whether it is on public land. Three, **merge**: if another resident reports the same rubbish, it joins the same hotspot, and each account can confirm only once. Four, **prioritise**: when three residents confirm it, or it stays for three days, it turns **URGENT** and management is alerted. Five, **track**: residents follow the case until it is resolved, and earn EcoPoints for helping. On the right, you can see this happening in a residential park. So instead of a pile of complaints, management gets one clear case, with a location and a priority. And the resident sees that one photo made a difference.",
-    tip: "The 3D simulation plays by itself and lights up each step on the left. Say each step as it lights up. If you fall behind, press Replay." },
-  { slide: 7, title: "Value", speaker: "Haziq", target: 48,
-    text: "Reporting itself is not new. What is new is the **logic after the report**. If ten residents report the same rubbish today, that is ten separate complaints. With SISA, it is one hotspot. Current channels cannot rank urgency; SISA raises priority automatically. And residents can follow every case to Resolved. Residents agree: **88.6%** rated one-photo reporting useful, **84.1%** tracking, and **79.5%** priority escalation. For residents, that means one photo and a clear result. For management, one ranked list instead of a pile of complaints. Najib will now show you the real app.",
-    tip: "Stress “after”. Move your hand left to right across the rows." },
-  { slide: 8, title: "Prototype demo", speaker: "Najib", target: 92,
-    text: "Thank you, Haziq. I built this prototype in Flutter, with Firebase for login, the database and hosting. Let me show you the real app. On the left is the resident app, and on the right is the admin dashboard. [demo] I take a photo of the rubbish; the app scans it and records the location. [demo] Two neighbours have already reported this same rubbish, so instead of a new complaint, my report joins their hotspot as the third confirmation. If I try to confirm again, the app blocks me. [demo] And on the admin dashboard, the case has just turned **URGENT**, with an alert for management, in real time. We tested merging, EcoPoints and the Day 2 and Day 3 alerts on desktop and iPhone. The full demo video is on this QR code.",
-    tip: "Syazwan switches to the demo windows (Alt+Tab) on “let me show you”, and back to the deck on “QR code”. If anything fails, keep talking and open the demo video from the QR link. Never fix it live." },
-  { slide: 9, title: "Prototype feedback", speaker: "Najib", target: 64,
-    text: "So what did we learn? At the hackathon we built a working app in one week, but we did not make the top ten. The lesson was clear: a working app is not enough. We needed proof from real users. So we went back and surveyed 44 residents. **84.1%** said they would use SISA. They also raised two worries, privacy and fake reports, and asked for two features. So here is what we will change. First, the AI scan is simulated today, so we will replace it with a real image model. Second, we will send each hotspot to the right local council. Third, we will add follow-up photos for open cases. And we will test the privacy and fake-report checks in a two-week pilot in one residential area. Syazwan?",
-    tip: "Say “we did not make the top ten” calmly; it shows honesty and learning. Drop that phrase if the team prefers." },
-  { slide: 10, title: "Close", speaker: "Syazwan", target: 36,
-    text: "Thank you, Najib. We started with one pile of rubbish beside a walkway, and we ended with a system that turns every report into action. One week. A working prototype. Forty-four residents who told us they want this. [pause] We don’t just report waste. [pause] We turn waste reports into **township intelligence**. Thank you, and we welcome your questions.",
-    tip: "Everyone stands together and looks at the lecturer for the last line. Stop the timer; aim to finish between 9:20 and 9:50." }
+  { slide: 1, title: "Hook", speaker: "Syazwan", target: 30,
+    key: "3 in 4 never report. Not because they don’t care.",
+    text: "Assalamualaikum and good morning, {L}. [pause] Look at this rubbish. Our team filmed it beside a public walkway. **Three in four** residents we surveyed have never reported rubbish like this. Not because they don’t care. Because they don’t know where to report. Today, we show you how one photo can change that.",
+    tip: "Press T as you start. Let the video play for two seconds before you speak." },
+  { slide: 2, title: "Who we are", speaker: "Syazwan", target: 35,
+    key: "Hackathon entry. Built in one week.",
+    text: "We are **Group EcoSpark**, from CDCS259, UiTM Kedah. I’m Syazwan. This is Najib, our team leader and developer. Aiman, our system analyst. And Haziq. Why are we here? SISA was our entry to the **Sime Darby Property University Hackathon 2026**. We built it in **one week**. Today, we share what we built, and what we learned. Aiman?",
+    tip: "Point to each member as you say their name." },
+  { slide: 3, title: "Problem", speaker: "Aiman", target: 35,
+    key: "Rubbish keeps coming back. Reports go nowhere.",
+    text: "Thank you, Syazwan. Our problem is simple. **Rubbish keeps coming back to the same spots, and reports go nowhere.** [pause] Look at this loop. Rubbish appears. Few people report it. The reports that do come in pile up as separate complaints. Nothing is ranked, so the rubbish stays. And the loop starts again.",
+    tip: "Say the bold line slowly. Then point at each box of the loop." },
+  { slide: 4, title: "Why it matters", speaker: "Aiman", target: 45,
+    key: "None merges. None ranks. 2.64 out of 5.",
+    text: "Is this serious? Yes. Malaysia throws away **39,000 tonnes** of waste every day. **2,634** illegal dumping sites were closed in 2024. And **two in three** residents we asked see dumped rubbish every month. [pause] Today, people use the hotline, WhatsApp, SISPAA or PBTCare. But none of them merges duplicates. None of them ranks urgency. That’s why residents rate them only **2.64 out of 5**.",
+    tip: "Run your hand down the red crosses on “none”." },
+  { slide: 5, title: "Our users", speaker: "Aiman", target: 50,
+    key: "Resident: doesn’t know where. Manager: doesn’t know what’s urgent.",
+    text: "So who are our users? First, **the resident**. Their biggest problem: they **don’t know where to report**. They want one easy way to report, and to see that something happened. Second, **the township manager**. They get many complaints about one pile, and **can’t tell which is urgent**. Residents told us two more things. They want updates and rewards. And they worry about privacy and fake reports. Haziq?",
+    tip: "Speak about the resident like a real neighbour. Empathy earns the user-understanding mark." },
+  { slide: 6, title: "Solution", speaker: "Haziq", target: 45,
+    key: "Report, verify, merge, prioritise, track.",
+    text: "Thank you, Aiman. Our answer is **SISA**. One photo, five steps. **Report**: take a photo, and the app saves the location. **Verify**: AI checks if it’s public waste, and how bad it is. **Merge**: same rubbish, one hotspot, one confirmation per person. **Prioritise**: three residents, or three days, and it turns urgent. **Track**: residents follow it until it’s cleared, and earn EcoPoints.",
+    tip: "Count the five steps on your fingers. Say each one as it lights up in the simulation." },
+  { slide: 7, title: "Value", speaker: "Haziq", target: 40,
+    key: "Not the report. What happens after it.",
+    text: "What’s new is not reporting. It’s **what happens after the report**. Ten reports of one pile? Other channels: ten complaints. SISA: **one hotspot**. Other channels: no priority. SISA: **ranked automatically**. And residents can **track every case**. Residents agree: almost **nine in ten** found one-photo reporting useful. Najib will show you the real app.",
+    tip: "Pause between “other channels” and “SISA” each time. The contrast is the point." },
+  { slide: 8, title: "Prototype demo", speaker: "Najib", target: 75,
+    key: "Photo. Merge. URGENT.",
+    text: "Thank you, Haziq. This is our real app, built with **Flutter and Firebase**. On the left, the resident app. On the right, the admin dashboard. [demo] I take a photo, and the app scans it. [demo] Two neighbours already reported this pile. So my report joins their hotspot, as the third confirmation. If I try again, it’s blocked. [demo] And on the dashboard, it’s now **URGENT**. Management is alerted, in real time. For the full walkthrough, scan this QR code.",
+    tip: "Syazwan switches to the demo (Alt+Tab) on “real app” and back on “QR code”. If anything fails, keep talking and play the video. Never fix it live." },
+  { slide: 9, title: "Prototype feedback", speaker: "Najib", target: 50,
+    key: "A working app is not enough. We need proof from users.",
+    text: "What did we learn? At the hackathon, we built a working app in one week, but we did not make the top ten. Our lesson: **a working app is not enough. We need proof from users.** So we surveyed 44 residents. **84%** said they would use SISA. They also gave us our to-do list. Next: a **real AI model**, because today the scan is simulated. Send reports to the **right council**. Add **follow-up photos**. Then a **two-week pilot** in one neighbourhood. Syazwan?",
+    tip: "Say “we did not make the top ten” calmly, then go straight to the lesson." },
+  { slide: 10, title: "Close", speaker: "Syazwan", target: 25,
+    key: "One photo. One hotspot. One clear priority.",
+    text: "Thank you, Najib. One photo. One hotspot. One clear priority. [pause] We don’t just report waste. We turn waste reports into **township intelligence**. Thank you. We welcome your questions.",
+    tip: "Everyone stands together and looks at the lecturers for the last line. Stop the timer." }
 ];
 
 window.QA = [
   { q: "Is the AI real?", who: "Najib",
-    a: "Not yet. In the prototype the AI scan is simulated, and we say so on the slides. Everything after the photo is working: merging, priority, alerts, tracking and EcoPoints. Connecting a real image model is our next step." },
-  { q: "SISPAA and PBTCare already exist. Why build another app?", who: "Haziq",
-    a: "Those channels collect reports one by one. SISA adds what happens after the report: merging duplicates into one hotspot, raising priority automatically, and letting residents track the case. And 39.4% of our non-reporters do not even know where to report." },
+    a: "Not yet. The AI scan is simulated, and we say so on the slides. Everything after the photo works: merging, priority, alerts, tracking and EcoPoints. A real image model is our next step." },
+  { q: "SISPAA and PBTCare already exist. Why another app?", who: "Haziq",
+    a: "They collect reports one by one. SISA adds what happens after: one hotspot, automatic priority, and tracking. And 39% of non-reporters don’t even know where to report." },
   { q: "How do you stop fake or spam reports?", who: "Haziq",
-    a: "Each report needs a photo and a location, the AI check verifies the waste type and public land, and each account can confirm a hotspot only once. 52.3% of residents raised fake reports as a worry, so this is built into the design, and we will test it in the pilot." },
+    a: "Every report needs a photo and a location. The AI checks it. And each account can confirm a hotspot only once." },
   { q: "What about privacy?", who: "Aiman",
-    a: "56.8% of residents were worried about privacy. The app only needs the rubbish photo and its location, and residents report from their own accounts. A privacy review is part of the pilot." },
+    a: "The app only needs the rubbish photo and its location. Nothing else about the resident. We will review privacy in the pilot." },
   { q: "Why would residents keep using it?", who: "Aiman",
-    a: "Residents told us what motivates them: recognition (59.1%), progress updates (56.8%) and rewards (50%). SISA gives case tracking and EcoPoints, so residents can see that their report led to action." },
+    a: "Residents told us: recognition, progress updates and rewards. SISA gives tracking and EcoPoints, so they see their report made a difference." },
   { q: "Who pays for it?", who: "Syazwan",
-    a: "Residents use the app for free. Township and property management companies, councils and residents’ associations would subscribe to the admin dashboard. 63.6% of residents supported management paying, including all four committee members we surveyed." },
-  { q: "What would you do differently at the hackathon?", who: "Aiman",
-    a: "Talk to users first. We built a working app in one week, but our evidence came only after the hackathon, from the survey. Next time we would collect a few resident interviews on day one and build the pitch around them." }
+    a: "Residents use it free. Township management, councils and residents’ associations pay for the dashboard. 63.6% of residents supported that." },
+  { q: "What would you do differently?", who: "Aiman",
+    a: "Talk to users first. We built fast, but our evidence came after the hackathon. Next time, we start with residents on day one." }
 ];
 
 (function () {
@@ -1010,7 +1020,7 @@ window.QA = [
     document.getElementById('nMeta').textContent = `Slide ${i + 1} · ${s.title} · about ${Math.round(w / 130 * 60) + 10 * (s.text.match(/\[demo\]/g) || []).length} seconds`;
     const esc = t => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
     document.getElementById('nText').innerHTML = esc(txt).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\[pause\]/g, '<em>(pause)</em>').replace(/\[click\]/g, '<em class="clk">[click]</em>').replace(/\[demo\]/g, '<em class="clk">[demo]</em>');
-    document.getElementById('nTip').textContent = 'Delivery: ' + s.tip.replace(/\[click\]/g, 'click').replace(/\[demo\]/g, 'demo');
+    document.getElementById('nTip').textContent = (s.key ? 'Key line: ' + s.key + '  ·  ' : '') + 'Delivery: ' + s.tip.replace(/\[click\]/g, 'click').replace(/\[demo\]/g, 'demo');
   }
 
   const reel = document.getElementById('reel');
