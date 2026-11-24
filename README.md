@@ -6,6 +6,6 @@ Interactive web pitch deck for the ISP624 group project pitching (10-minute limi
 **Speaker script and Q&A:** https://aymanazlan.github.io/sisa-pitch-isp624/script.html
 
 Controls: ← → or swipe to change slides · N for speaker notes · T to start or pause the timer (Shift+T resets) · F for full screen.
-The deck is a single offline `index.html` (images, fonts, video and three.js embedded). Behind every slide, one 3D world of 1,000 glowing report-cubes morphs into a new shape per slide (rubbish heap, map pin, hotspot beacon, merging complaints, phone, clean township), with low-poly residents acting out each scene. A chapter rail at the bottom follows the rubric sections.
+The deck is a single offline `index.html` (images, video and the three.js 3D engine embedded; only the web fonts load online). Behind every slide, one 3D world of about 1,000 glowing “waste reports” rebuilds itself into a new shape: scattered rubbish, the SISA leaf, an endless loop with residents walking past, a heap, two users, a township map, one merging hotspot beam, a phone and rising bars.
 
 Demo video: https://youtu.be/X-V6bfDxrZM · Prototype code: https://github.com/ariefnajib25/WasteHotspot-AI
