@@ -4,6 +4,7 @@ Interactive web pitch deck for the ISP624 group project pitching (10-minute limi
 
 **Live deck:** https://aymanazlan.github.io/sisa-pitch-isp624/
 **Live 3D version (waste-township theme):** https://aymanazlan.github.io/sisa-pitch-isp624/live/
+**Clean-up sweep version (litter is swept into a garbage truck on every slide):** https://aymanazlan.github.io/sisa-pitch-isp624/sweep/
 **Speaker script and Q&A:** https://aymanazlan.github.io/sisa-pitch-isp624/script.html
 
 Controls: ← → or swipe to change slides · N for speaker notes · T to start or pause the timer (Shift+T resets) · F for full screen · W turns the 3D world off or on (use it if a slow laptop lags).
