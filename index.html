@@ -677,7 +677,7 @@ body { background: #061510; }
 <div class="grain"></div>
 <div class="bignum" id="bignum" aria-hidden="true">01</div>
 <div class="progress" id="progress"></div>
-<p class="hint" id="hint">← → or swipe to move · N for notes · F for full screen · T for timer</p>
+<p class="hint" id="hint">← → or swipe to move · N for notes · F for full screen · T for timer · W turns the 3D world off or on</p>
 
 <main class="stage" id="stage">
 
@@ -2039,7 +2039,7 @@ body { background: #061510; }
     addEventListener('resize', layout); layout();
     var mx = 0, my = 0; addEventListener('pointermove', function (e) { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; });
 
-    var clock = new T.Clock(), visible = true, flash = 0, groupX = 0, dim = 1, dimT = 1;
+    var clock = new T.Clock(), visible = true, paused = false, flash = 0, groupX = 0, dim = 1, dimT = 1;
     document.addEventListener('visibilitychange', function () { visible = !document.hidden; });
     function ease(t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
     function morph(name, actors, offset, brightness) {
@@ -2050,7 +2050,7 @@ body { background: #061510; }
       offTarget = +offset || 0; dimT = brightness == null ? 1 : +brightness; flash = 1;
     }
     function frame() {
-      requestAnimationFrame(frame); if (!visible) return;
+      requestAnimationFrame(frame); if (!visible || paused) return;
       var t = clock.getElapsedTime(), k = RMW ? 0 : 1, since = t - tStart, dur = RMW ? .01 : 1.7;
       groupX += (offTarget * offMax - groupX) * .04; group.position.x = groupX;
       dim += (dimT - dim) * .05;
@@ -2092,7 +2092,7 @@ body { background: #061510; }
       if (composer) composer.render(); else renderer.render(sc, cam);
     }
     frame();
-    return { morph: morph };
+    return { morph: morph, toggle: function () { paused = !paused; canvas.style.visibility = paused ? 'hidden' : ''; return !paused; } };
   }
   try { if (window.THREE) window.WORLD = build(); } catch (err) { window.WORLD = null; console.warn('3D world off:', err); }
 })();
@@ -2346,6 +2346,7 @@ window.QA = [
     else if (e.key.toLowerCase() === 'n') toggleNotes();
     else if (e.key.toLowerCase() === 'f') full();
     else if (e.key.toLowerCase() === 't') { e.shiftKey ? tReset() : tToggle(); }
+    else if (e.key.toLowerCase() === 'w' && window.WORLD) window.WORLD.toggle();
   });
   let sx = 0, sy = 0;
   addEventListener('touchstart', e => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, { passive: true });
